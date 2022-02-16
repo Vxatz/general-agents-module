@@ -186,6 +186,11 @@ export class TestBlockEvent extends BlockEvent {
     this.block.timestamp = timestamp;
     return this;
   }
+  
+  public setDifficulty(difficulty: string): TestBlockEvent {
+    this.block.difficulty = difficulty;
+    return this;
+  }
 
   public addTransactions(...txns: TransactionEvent[]): TestBlockEvent {
     this.block.transactions.push(...txns.map((tx) => tx.hash));
